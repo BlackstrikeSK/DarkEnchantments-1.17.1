@@ -1,5 +1,6 @@
 package com.blackstrikesk.darkenchantments;
 
+import com.blackstrikesk.darkenchantments.item.ModItems;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
@@ -29,6 +30,8 @@ public class DarkEnchantments
     public DarkEnchantments() {
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
         eventBus.addListener(this::setup);
+
+        ModItems.register(eventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
     }
